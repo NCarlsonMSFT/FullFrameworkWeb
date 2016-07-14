@@ -1,0 +1,15 @@
+FROM windowsservercore 
+EXPOSE 80
+ENTRYPOINT ping -t localhost
+
+RUN powershell -Command Add-WindowsFeature Web-Server, Web-Security, Web-Net-Ext45, Web-Asp-Net45, Web-Mgmt-Tools, NET-Framework-45-ASPNET
+
+COPY . /app
+RUN PowerShell -Command "\
+ # Remove the default site \
+ Remove-IISSite -Name 'Default Web Site' -Confirm:$false;\
+ # Set the ACL for the new site to be the same as the default site \
+ Get-Acl C:\inetpub\wwwroot\ | Set-Acl C:\app;\
+ # Add the published app as the new default site \
+ New-IISSite -PhysicalPath 'C:\app' -BindingInformation *:80: -Name 'Default Web Site';"
+ 

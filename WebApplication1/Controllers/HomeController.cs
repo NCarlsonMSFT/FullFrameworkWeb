@@ -10,6 +10,8 @@ namespace WebApplication1.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Message = "OS: " + Environment.OSVersion.Platform + " HostName: " + Environment.MachineName;
+
             return View();
         }
 
