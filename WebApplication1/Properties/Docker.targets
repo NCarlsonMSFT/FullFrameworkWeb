@@ -44,7 +44,7 @@
   <Target Name="DockerClean" AfterTargets="Clean" DependsOnTargets="$(DockerCleanDependsOn)" />
   <Target Name="CoreDockerClean" Condition="'$(DockerBuild)'=='True'">
     <PropertyGroup>
-      <DockerCleanCommand>powershell -NonInteractive -ExecutionPolicy RemoteSigned .\DockerTask.ps1 -Clean -Environment $(Configuration)'</DockerCleanCommand>
+      <DockerCleanCommand>powershell -NonInteractive -ExecutionPolicy RemoteSigned .\DockerTask.ps1 -Clean -Environment $(Configuration)</DockerCleanCommand>
     </PropertyGroup>
     <Message Importance="high" Text="$(DockerCleanCommand)" />
     <Exec
