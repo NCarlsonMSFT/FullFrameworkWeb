@@ -1,6 +1,6 @@
 FROM windowsservercore 
 EXPOSE 80
-ENTRYPOINT ping -t localhost
+ENTRYPOINT powershell -Command [System.Threading.Thread]::Sleep([System.Threading.Timeout]::Infinite)
 
 RUN powershell -Command Add-WindowsFeature Web-Server, Web-Security, Web-Net-Ext45, Web-Asp-Net45, Web-Mgmt-Tools, NET-Framework-45-ASPNET
 
