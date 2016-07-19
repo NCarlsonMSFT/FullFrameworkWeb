@@ -25,45 +25,6 @@ Param(
     [bool]$OpenSite = $True
 )
 
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-#TODO : Not this....
-$Env:DevEnvDir = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\"
-$Env:Framework40Version = "v4.0"
-$Env:FrameworkDir = "C:\WINDOWS\Microsoft.NET\Framework\"
-$Env:FrameworkDIR32 = "C:\WINDOWS\Microsoft.NET\Framework\"
-$Env:FrameworkVersion = "v4.0.30319"
-$Env:FrameworkVersion32 = "v4.0.30319"
-$Env:INCLUDE = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um;"
-$Env:LIB = "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\lib\um\x86;"
-$Env:LIBPATH = "C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319;"
-$Env:NETFXSDKDir = "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\"
-$Env:Path = "$Env:Path;C:\Program Files (x86)\MSBuild\14.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools;C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\VCPackages;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Performance Tools;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Users\ncarlson\AppData\Local\Microsoft\WindowsApps;"
-$Env:PATHEXT = ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"
-$Env:VCINSTALLDIR = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\"
-$Env:VisualStudioVersion = "14.0"
-$Env:VS140COMNTOOLS = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\"
-$Env:VSINSTALLDIR = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\"
-$Env:VSSDK140Install = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VSSDK\"
-$Env:WindowsLibPath = "References\CommonConfiguration\Neutral"
-$Env:WindowsSDKLibVersion = "winv6.3\"
-$Env:WindowsSDKVersion = "\"
-$Env:WindowsSDK_ExecutablePath_x64 = "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\x64\"
-$Env:WindowsSDK_ExecutablePath_x86 = "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\"
-
-
-
-
-
 $ErrorActionPreference = "Stop"
 
 # Turns VERBOSE output ON

@@ -18,6 +18,10 @@
       SetDockerProps;
       CoreDockerBeforeRebuild;
     </DockerBeforeRebuildDependsOn>
+    <DockerTaskEnv>
+      SET Path=%Path%;$(MSBuildBinPath)
+      SET VisualStudioVersion=$(VisualStudioVersion)
+    </DockerTaskEnv>
   </PropertyGroup>
 
   <!-- This target dynamically sets the DockerBuild property based on the ActiveDebugProfile so that docker commands will only be invoked when targeting docker -->
@@ -37,7 +41,9 @@
     <Message Importance="high" Text="$(DockerBuildCommand)" />
     <Exec
       WorkingDirectory="$(MSBuildProjectDirectory)"
-      Command="$(DockerBuildCommand)" />
+      Command="
+      $(DockerTaskEnv)
+      $(DockerBuildCommand)" />
   </Target>
 
   <!-- These targets take care of buiding the docker image as part of the project's clean -->
@@ -49,7 +55,9 @@
     <Message Importance="high" Text="$(DockerCleanCommand)" />
     <Exec
       WorkingDirectory="$(MSBuildProjectDirectory)"
-      Command="$(DockerCleanCommand)" />
+      Command="
+      $(DockerTaskEnv)
+      $(DockerCleanCommand)" />
   </Target>
 
   <!-- These targets take care of buiding the docker image as part of the project's rebuild -->
