@@ -182,7 +182,7 @@ function PublishProject () {
         Push-Location $ProjectFolder
 
         # Publish the project
-        msbuild /p:WebPublishMethod=FileSystem /p:PublishUrl="$pubPath" /p:DeployOnBUild=true /p:DeployTarget=WebPublish /p:DockerBuild=False
+        msbuild /p:Configuration="$Environment" /p:WebPublishMethod=FileSystem /p:PublishUrl="$pubPath" /p:DeployOnBUild=true /p:DeployTarget=WebPublish /p:DockerBuild=False
     }
     finally {
         Pop-Location
@@ -206,7 +206,7 @@ function GetDockerFilePath([string]$folder) {
 }
 
 # Our working directory in bin
-$dockerBinFolder = Join-Path $ProjectFolder (Join-Path "bin" "Docker")
+$dockerBinFolder = Join-Path $ProjectFolder (Join-Path "bin" (Join-Path "Docker" "$Environment"))
 # The folder to publish the app to
 $pubPath = Join-Path $dockerBinFolder "app"
 
